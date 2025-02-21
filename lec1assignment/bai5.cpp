@@ -6,7 +6,7 @@
 #include <vector> 
 
 using namespace std;
-void getSumGS (vector<int> &day){
+void tinhtong(vector<int> &day){
    
     int n = day.size();
     int max = day[0];
@@ -37,7 +37,7 @@ int main(){
                             cin >> day[i];
                         }
                         
-                        getSumGS(day);
+                        tinhtong(day);
                     
                     
 }
