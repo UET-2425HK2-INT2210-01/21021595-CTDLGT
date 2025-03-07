@@ -1,0 +1,27 @@
+struct Node:
+    int data
+   Node* next
+
+Class Stack:
+   Node* head = NULL
+
+Function IsEmpty():
+    Return (head = NULL)
+
+Function Push(value):
+    node = new Node(value)
+    node->next =head
+head = node
+
+Function Pop():
+    If IsEmpty() then:
+        Print "empty"
+        Return
+    head = head->next
+
+Function head():
+    If IsEmpty() then:
+        Print "empty"
+        Return NULL
+    Return head->data
+do phuc tap O(1)
