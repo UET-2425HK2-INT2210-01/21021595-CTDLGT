@@ -14,7 +14,7 @@ Function Push(value):
         Return
     head =head + 1
 
-    stack[head] <- value
+    stack[head] =value
 
 Function Pop():
     If IsEmpty() then:
