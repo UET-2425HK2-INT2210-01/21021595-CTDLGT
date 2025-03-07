@@ -1,0 +1,26 @@
+Define max as integer
+Define stack[max]
+Define head= -1
+
+Function IsEmpty():
+    Return (head = -1)
+
+Function IsFull():
+    Return (head= max - 1)
+
+Function Push(value):
+    If IsFull() then:
+        Print "full"
+        Return
+    head =head + 1
+
+    stack[head] <- value
+
+Function Pop():
+    If IsEmpty() then:
+        Print "empty"
+        Return
+    head =head - 1
+
+
+ca 2 co do phuc tap O(1)
