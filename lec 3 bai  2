@@ -1,0 +1,29 @@
+Define max as interger
+Define queue[max]
+Define head =-1
+Define tail = -1
+
+Function Empty():
+    Return (head = -1 OR head > tail)
+
+Function Full():
+    Return (tail = max - 1)
+
+Function Enqueue(value):
+    If Full() then:
+        Print Full
+    else    
+      If head == -1 then:
+        head= 0
+      tail=tail+1
+      queue[tail] = value
+
+Function Dequeue():
+    If Empty() then:
+        Print empty
+   else
+      head =head  + 1
+        If head > tail then:
+           head= -1
+           tail= -1
+
