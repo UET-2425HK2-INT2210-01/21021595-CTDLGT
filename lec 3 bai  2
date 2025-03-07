@@ -26,4 +26,4 @@ Function Dequeue():
         If head > tail then:
            head= -1
            tail= -1
-
+Do phuc tap o(1)
