@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+
+// Node structure
+struct Node {
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+// Linked List class
+class LinkedList {
+private:
+    Node* head;
+    Node* tail;
+public:
+    LinkedList() : head(nullptr), tail(nullptr) {}
+
+    // Append function
+    void append(int x) {
+        Node* newNode = new Node(x);
+        if (!head) {
+            head = tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
+    // Search function (0-based index)
+    void search(int x) {
+        Node* temp = head;
+        int index = 0;
+        while (temp) {
+            if (temp->data == x) {
+                cout << index << endl;
+                return;
+            }
+            temp = temp->next;
+            index++;
+        }
+        cout << "NO" << endl;
+    }
+
+    // Reverse function
+    void reverse() {
+        Node* prev = nullptr;
+        Node* curr = head;
+        Node* next = nullptr;
+        while (curr) {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+    // Print function
+    void print() {
+        Node* temp = head;
+        while (temp) {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    int n;
+    cin >> n;
+    LinkedList list;
+    
+    for (int i = 0; i < n; i++) {
+        string command;
+        cin >> command;
+        if (command == "append") {
+            int x;
+            cin >> x;
+            list.append(x);
+        } else if (command == "search") {
+            int x;
+            cin >> x;
+            list.search(x);
+        } else if (command == "reverse") {
+            list.reverse();
+            list.print();
+        }
+    }
+    
+    return 0;
+}
